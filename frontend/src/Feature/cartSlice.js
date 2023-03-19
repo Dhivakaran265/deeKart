@@ -1,7 +1,7 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
 
-let user=JSON.parse(localStorage.getItem('user'));
+
 let cart=JSON.parse(localStorage.getItem('cart'));
 
 export let addCart=createAsyncThunk('cart/addCart',async (data,thunkAPI)=>{

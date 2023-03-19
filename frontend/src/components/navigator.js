@@ -33,7 +33,7 @@ export default function Navigator(){
     <div>
       <BrowserRouter>
       <div className="navigate">
-         <section className="app-title"> <Link className="mart" to='/'>DeeKay's Mart</Link>
+         <section className="app-title"> <Link className="mart" to='/'>DeeKart</Link>
          </section>
         <div className="signIn">
 

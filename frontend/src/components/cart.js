@@ -6,7 +6,7 @@ import {nanoid} from 'nanoid'
 
 
 
-export default ()=>{
+export default function Cart(){
   let userSelector=useSelector(state=>state.user)
 
   let cartSelector=useSelector(state=>state.cart.cart)
