@@ -9,4 +9,4 @@ let cartSchema=mongoose.Schema({
 
 let cartModel=mongoose.model('cart',cartSchema)
 
-module.exports=cartModel
+module.exports=cartModel 
