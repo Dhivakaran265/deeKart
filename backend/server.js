@@ -10,16 +10,20 @@ const path=require('path')
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors({
-  origin:'http://localhost:3000'
+  origin:(origin,payBack)=>{
+    payBack(null,true)
+  },
+  optionSuccessStatus:200
 }))
 
 app.use('/user',require('./routes/userRoutes'))
 app.use('/cart',require('./routes/cartRouter'))
 app.use('/order',require('./routes/orderRoutes'))
-app.use(express.static(path.join(__dirname,'..','frontend','build')))
-app.get('*',(req,res)=>{
-  res.sendFile(path.join(__dirname,'..','frontend','build','index.js'))
-})
+
+// app.use(express.static(path.join(__dirname,'..','frontend','build')))
+// app.get('*',(req,res)=>{
+//   res.sendFile(path.join(__dirname,'..','frontend','build','index.js'))
+// })
 
 app.use(errorHandler)
 console.log(path.join(__dirname,'..','frontend','build'));
