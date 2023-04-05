@@ -4,7 +4,7 @@ import axios from 'axios'
 export let register=createAsyncThunk('user/register',async (data,thunkAPI)=>{
       try {
         console.log(data);
-        let user=await axios.post('http://localhost:8000/user/register',data);
+        let user=await axios.post('https://deekart.onrender.com/user/register',data);
         localStorage.setItem('user',JSON.stringify(user.data))
         return user.data;
 
@@ -16,7 +16,7 @@ export let register=createAsyncThunk('user/register',async (data,thunkAPI)=>{
 
 export let logIn=createAsyncThunk('user/logIn',async (data,thunkAPI)=>{
    try {
-    let user=await axios.post('http://localhost:8000/user/login',data)
+    let user=await axios.post('https://deekart.onrender.com/user/login',data)
     localStorage.setItem('user',JSON.stringify(user.data) )
     return user.data;
    } catch (error) {

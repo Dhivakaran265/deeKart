@@ -6,7 +6,7 @@ let cart=JSON.parse(localStorage.getItem('cart'));
 
 export let addCart=createAsyncThunk('cart/addCart',async (data,thunkAPI)=>{
   try {
-    let result=await axios.post('http://localhost:8000/cart/',data,{headers:{
+    let result=await axios.post('https://deekart.onrender.com/cart/',data,{headers:{
       Authorization:`Bearer ${data.token}`
     }})
     localStorage.setItem('cart',JSON.stringify(result.data))
@@ -20,7 +20,7 @@ export let addCart=createAsyncThunk('cart/addCart',async (data,thunkAPI)=>{
 
   export let removeCart=createAsyncThunk('cart/removeCart',async (data,thunkAPI)=>{
         try {
-          let result=await axios.delete(`http://localhost:8000/cart/${data.id}`,{headers:{
+          let result=await axios.delete(`https://deekart.onrender.com/cart/${data.id}`,{headers:{
             Authorization:`Bearer ${data.token}`
           }})
           localStorage.setItem('cart',JSON.stringify(result.data))
@@ -34,7 +34,7 @@ export let addCart=createAsyncThunk('cart/addCart',async (data,thunkAPI)=>{
 
   export let getCart=createAsyncThunk('cart/getCart',async (data,thunkAPI)=>{
    try {
-    let cartItems=await axios.get('http://localhost:8000/cart/',{headers:{
+    let cartItems=await axios.get('https://deekart.onrender.com/cart/',{headers:{
       Authorization:`Bearer ${data}`
     }})
     return cartItems.data

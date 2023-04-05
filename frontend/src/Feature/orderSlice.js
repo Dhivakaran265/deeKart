@@ -6,7 +6,7 @@ let user=JSON.parse(localStorage.getItem('user'));
 
 export let cancelOrders=createAsyncThunk('order/cancelOrders',async (data,thunkAPI)=>{
           try {
-            let result=await axios.delete(`http://localhost:8000/order/${data.id}`,{headers:{
+            let result=await axios.delete(`https://deekart.onrender.com/order/${data.id}`,{headers:{
               Authorization:`Bearer ${data.token}`
             }})
             localStorage.setItem('orders',JSON.stringify(result.data))
@@ -19,7 +19,7 @@ export let cancelOrders=createAsyncThunk('order/cancelOrders',async (data,thunkA
 export let getOrders=createAsyncThunk('order/getOrders',async (data,thunkAPI)=>{
 
     try {
-      let result=await axios.get('http://localhost:8000/order/',{headers:
+      let result=await axios.get('https://deekart.onrender.com/order/',{headers:
       {Authorization:`Bearer ${data}`}})
        localStorage.setItem('order',JSON.stringify(result.data))
        return result.data
@@ -32,7 +32,7 @@ export let getOrders=createAsyncThunk('order/getOrders',async (data,thunkAPI)=>{
 export let placeOrder=createAsyncThunk('order/placeOrder',async (data,thunkAPI)=>{
         try {
           console.log(data);
-          let result=await axios.post('http://localhost:8000/order/',data,{headers:
+          let result=await axios.post('https://deekart.onrender.com/order/',data,{headers:
           {Authorization:`Bearer ${data.token}`}})
           localStorage.setItem('order',JSON.stringify(result.data))
           return result.data
