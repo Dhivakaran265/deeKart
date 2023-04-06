@@ -8,10 +8,10 @@ export default function OrderSlice(){
   let user=useSelector(state=>state.user)
   let dispatch=useDispatch()
   let orderList=useSelector(state=>state.order.orderList)
-  console.log(orderList);
+
    
   let cancelOrder=(e)=>{
-    console.log(e.target.id);
+
      dispatch(cancelOrders({id:e.target.id,token:user.user.token}))
   }
   let x

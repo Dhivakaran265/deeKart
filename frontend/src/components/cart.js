@@ -11,7 +11,7 @@ export default function Cart(){
 
   let cartSelector=useSelector(state=>state.cart.cart)
   let dispatch=useDispatch()
-  console.log(cartSelector);
+
 
  
 
@@ -31,7 +31,6 @@ export default function Cart(){
       }
 
 
-console.log(cartSelector);
   let x=cartSelector.length===0?'Nothing in your cart':cartSelector.map(value=>{
     let id=value._id
     let val=value.product

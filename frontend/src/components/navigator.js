@@ -16,8 +16,7 @@ export default function Navigator(){
   let user=useSelector(state=>state.user) 
   let cart=useSelector(state=>state.cart)
   let order=useSelector(state=>state.order)
-  console.log(cart.cart.length);
-  console.log(order.orderList.length);
+  
   let dispatch=useDispatch()
 
   let logout=(e)=>{
@@ -70,7 +69,7 @@ export default function Navigator(){
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/details' element={<ProductDetails />} />
+        <Route path='/details/:id' element={<ProductDetails />} />
         <Route path="/order" element={<Orders />} />
       </Routes>
 

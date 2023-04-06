@@ -15,7 +15,7 @@ export default function Home(){
 React.useEffect(
   ()=>{
     if(user.user){
-      console.log(user);
+      
       dispatch(getCart(user.user.token))
       dispatch(getOrders(user.user.token))
     }
@@ -23,7 +23,7 @@ React.useEffect(
 
   let buyButton=(e)=>{
     if(user.user){
-      console.log(e.target);
+      
        let product = data.filter(val=>val.id===Number(e.target.id))
       dispatch(placeOrder({product:product[0],token:user.user.token}))
     }else{
@@ -35,7 +35,7 @@ React.useEffect(
 
   let click=(e)=>{
     let res=data.filter(val=>val.id===Number(e.target.id))
-    navigate('/details',{state:res})
+    navigate(`/details/${res[0].id}`,{state:res})
   }
   const x =data.map(val=>{
     return <div className="pro-card" key={val.id}>
@@ -49,7 +49,7 @@ React.useEffect(
     </div>
   })  
   let nam=user.user===null?'':user.user.name;
-  console.log(user);
+  
   return(
     <div className="home-body">
       <h3>welcome {nam}</h3>
