@@ -40,7 +40,7 @@ export default ()=>{
         <div className="title">{det.title} <b> &#183;</b> <span>{det.brand}</span></div>
         <div className="price">Price : $ {det.price}  <span>Discount : {det.discountPercentage} %</span></div>
         <p className="description">{det.description}</p>
-        <div className="rating"><span className="rate"><img src='./star.png' width='20px' /> {det.rating}</span> <b>&#183;</b>  <span className="u-rating">User Ratings</span> </div>
+        <div className="rating"><span className="rate"><img src='../star.png' width='20px' /> {det.rating}</span> <b>&#183;</b>  <span className="u-rating">User Ratings</span> </div>
       </section>
       <hr></hr>
      <div className="buttons">
