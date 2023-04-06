@@ -51,7 +51,7 @@ export default function Cart(){
   })
 
   return(
-    <div style={{marginTop:'50px'}}>
+    <div style={{marginTop:'90px'}}>
       {x}
     </div>
   )
